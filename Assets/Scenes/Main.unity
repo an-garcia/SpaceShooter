@@ -1021,6 +1021,8 @@ MonoBehaviour:
   spawnWait: 0.5
   startWait: 1
   waveWait: 4
+  restartText: {fileID: 316077827}
+  gameOverText: {fileID: 1085802608}
   scoreText: {fileID: 707654776}
 --- !u!4 &2098893604
 Transform:
