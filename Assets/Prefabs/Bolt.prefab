@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4743155672456290}
   - component: {fileID: 114360960519611730}
+  - component: {fileID: 54688380368461426}
+  - component: {fileID: 136935511922200444}
   m_Layer: 0
   m_Name: Bolt
   m_TagString: Untagged
@@ -37,8 +39,6 @@ GameObject:
   - component: {fileID: 4767689005251160}
   - component: {fileID: 33216199563421954}
   - component: {fileID: 23998687650591994}
-  - component: {fileID: 54957331049438102}
-  - component: {fileID: 136718478489741178}
   m_Layer: 0
   m_Name: VFX
   m_TagString: Untagged
@@ -114,12 +114,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1730314793391676}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54957331049438102
+--- !u!54 &54688380368461426
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1730314793391676}
+  m_GameObject: {fileID: 1626483043915752}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -141,14 +141,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
---- !u!136 &136718478489741178
+--- !u!136 &136935511922200444
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1730314793391676}
+  m_GameObject: {fileID: 1626483043915752}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.03
   m_Height: 0.5
