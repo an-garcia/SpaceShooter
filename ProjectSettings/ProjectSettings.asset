@@ -11,7 +11,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: xengar
   productName: SpaceShooter
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -39,7 +39,8 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
@@ -57,8 +58,8 @@ PlayerSettings:
   iosAllowHTTPDownload: 1
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
-  allowedAutorotateToLandscapeRight: 1
-  allowedAutorotateToLandscapeLeft: 1
+  allowedAutorotateToLandscapeRight: 0
+  allowedAutorotateToLandscapeLeft: 0
   useOSAutorotation: 1
   use32BitDisplayBuffer: 1
   preserveFramebufferAlpha: 0
@@ -161,7 +162,7 @@ PlayerSettings:
     Android: com.Company.ProductName
     Standalone: unity.DefaultCompany.SpaceShooter
     Tizen: com.Company.ProductName
-    iOS: com.Company.ProductName
+    iOS: com.xengar.spaceshooter
     tvOS: com.Company.ProductName
   buildNumber:
     iOS: 0
@@ -193,18 +194,29 @@ PlayerSettings:
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
   uIStatusBarStyle: 0
-  iPhoneSplashScreen: {fileID: 0}
-  iPhoneHighResSplashScreen: {fileID: 0}
-  iPhoneTallHighResSplashScreen: {fileID: 0}
-  iPhone47inSplashScreen: {fileID: 0}
-  iPhone55inPortraitSplashScreen: {fileID: 0}
-  iPhone55inLandscapeSplashScreen: {fileID: 0}
-  iPhone58inPortraitSplashScreen: {fileID: 0}
-  iPhone58inLandscapeSplashScreen: {fileID: 0}
-  iPadPortraitSplashScreen: {fileID: 0}
-  iPadHighResPortraitSplashScreen: {fileID: 0}
-  iPadLandscapeSplashScreen: {fileID: 0}
-  iPadHighResLandscapeSplashScreen: {fileID: 0}
+  iPhoneSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d, type: 3}
+  iPhoneHighResSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
+  iPhoneTallHighResSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
+  iPhone47inSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
+  iPhone55inPortraitSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
+  iPhone55inLandscapeSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
+  iPhone58inPortraitSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
+  iPhone58inLandscapeSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
+  iPadPortraitSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
+  iPadHighResPortraitSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
+  iPadLandscapeSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
+  iPadHighResLandscapeSplashScreen: {fileID: 2800000, guid: 44de610b8ef51488eaf8f30168410b6d,
+    type: 3}
   appleTVSplashScreen: {fileID: 0}
   appleTVSplashScreen2x: {fileID: 0}
   tvOSSmallIconLayers: []
@@ -261,7 +273,14 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 21739be35db06436cb65550d7b1c1db7, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings: []
