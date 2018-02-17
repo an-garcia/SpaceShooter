@@ -1187,6 +1187,7 @@ MonoBehaviour:
   - {fileID: 1230976501376868, guid: 822fe2325a4e64d09b639beb8bbdb6a7, type: 2}
   - {fileID: 1081161953945560, guid: ea32e239470c54e26b6e279b5920d678, type: 2}
   - {fileID: 1156412290271698, guid: 34665ba21677143d7b2ac69aa04e07d9, type: 2}
+  - {fileID: 1174069175738524, guid: 095ea919bf25d416aa941702d769e5ab, type: 2}
   spawnValues: {x: 6, y: 0, z: 16}
   hazardCount: 10
   spawnWait: 0.5
