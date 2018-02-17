@@ -1,7 +1,7 @@
 # Space Shooter
 
 
-![Scheme](/screenshots/ScreenShot2018-02-16at2.23.19PM.png)
+![Scheme](/screenshots/ScreenShot2018-02-17at4.38.22PM.png)
 
 
 Unity space shooter in 3D.
