@@ -1,4 +1,5 @@
 ﻿//#define USE_TILT
+#define USE_TOUCHPAD
 
 using System.Collections;
 using System.Collections.Generic;
@@ -28,12 +29,16 @@ public class PlayerController : MonoBehaviour
 
 #if (USE_TILT)
     private Quaternion calibrationQuaternion;
+#elif (USE_TOUCHPAD)
+    private Quaternion calibrationQuaternion;
+    public SimpleTouchPad touchPad;
+    public SimpleTouchAreaButton areaButton;
 #endif
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-#if (USE_TILT)
+#if (USE_TILT || USE_TOUCHPAD)
         CalibrateAccelerometer();
 #endif
     }
@@ -41,7 +46,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+#if (USE_TOUCHPAD)
+        if (areaButton.CanFire() && Time.time > nextFire)
+        //if (Input.GetButton("Fire1") && Time.time > nextFire)
+#else
         if (Input.GetButton("Fire1") && Time.time > nextFire)
+#endif
         {
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
@@ -56,6 +66,9 @@ public class PlayerController : MonoBehaviour
         Vector3 accelerationRaw = Input.acceleration;
         Vector3 acceleration = FixAcceleration(accelerationRaw);
         Vector3 movement = new Vector3(acceleration.x, 0.0f, acceleration.y);
+#elif (USE_TOUCHPAD)
+        Vector2 direction = touchPad.GetDirection();
+        Vector3 movement = new Vector3(direction.x, 0.0f, direction.y);
 #else
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -75,7 +88,7 @@ public class PlayerController : MonoBehaviour
         rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
     }
 
-#if (USE_TILT)
+#if (USE_TILT || USE_TOUCHPAD)
     //Used to calibrate the Iput.acceleration input
     void CalibrateAccelerometer()
     {
