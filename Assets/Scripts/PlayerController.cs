@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
     {
 #if (USE_TOUCHPAD)
         if (areaButton.CanFire() && Time.time > nextFire)
-        //if (Input.GetButton("Fire1") && Time.time > nextFire)
 #else
         if (Input.GetButton("Fire1") && Time.time > nextFire)
 #endif
