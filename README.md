@@ -12,6 +12,7 @@ This projecct is based on [Tutorial](https://unity3d.com/learn/tutorials/s/space
 ## Requirements
 - MAC machine with [Unity](https://store.unity.com/download?ref=personal)  installed.
 - Setup folder with .gitgnore based on [Tutorial](http://www.studica.com/blog/how-to-setup-github-with-unity-step-by-step-instructions)
+- (OPTIONAL) [Unity Remote app](https://docs.unity3d.com/Manual/UnityRemote5.html) installed in iOS device.
 
 
 

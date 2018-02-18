@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿//#define USE_TILT
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 [System.Serializable]
 public class Boundary
@@ -9,7 +12,8 @@ public class Boundary
 }
 
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     public float speed;
     public float tilt;
@@ -22,9 +26,16 @@ public class PlayerController : MonoBehaviour {
     private float nextFire;
     private AudioSource audioSource;
 
+#if (USE_TILT)
+    private Quaternion calibrationQuaternion;
+#endif
 
-    void Start() {
+    void Start()
+    {
         audioSource = GetComponent<AudioSource>();
+#if (USE_TILT)
+        CalibrateAccelerometer();
+#endif
     }
 
 
@@ -41,10 +52,16 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate()
     {
+#if (USE_TILT)
+        Vector3 accelerationRaw = Input.acceleration;
+        Vector3 acceleration = FixAcceleration(accelerationRaw);
+        Vector3 movement = new Vector3(acceleration.x, 0.0f, acceleration.y);
+#else
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+#endif
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = movement * speed;
 
@@ -57,4 +74,21 @@ public class PlayerController : MonoBehaviour {
 
         rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
     }
+
+#if (USE_TILT)
+    //Used to calibrate the Iput.acceleration input
+    void CalibrateAccelerometer()
+    {
+        Vector3 accelerationSnapshot = Input.acceleration;
+        Quaternion rotateQuaternion = Quaternion.FromToRotation(new Vector3(0.0f, 0.0f, -1.0f), accelerationSnapshot);
+        calibrationQuaternion = Quaternion.Inverse(rotateQuaternion);
+    }
+
+    //Get the 'calibrated' value from the Input
+    Vector3 FixAcceleration(Vector3 acceleration)
+    {
+        Vector3 fixedAcceleration = calibrationQuaternion * acceleration;
+        return fixedAcceleration;
+    }
+#endif
 }
